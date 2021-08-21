@@ -54,10 +54,12 @@ smsinfo3 = "3-) Gönderilecek Metin:  "
 
 if secenek1 == kosul1:
     smspam1 = input(smsinfo1 + Fore.WHITE)
-    smspam2 = input(Fore.RED + smsinfo2 + "+ " + smspam1 + Fore.WHITE)
+    smspam2 = input(Fore.RED + smsinfo2 + "+" + smspam1 + " " + Fore.WHITE)
     smspam3 = input(Fore.RED + smsinfo3 + Fore.WHITE)
 
 
+
+# SMS Spam İşlemleri
 
 
 
@@ -67,3 +69,4 @@ if secenek1 == kosul1:
 if secenek1 == kosul2:
     print("Çıkış Yapılıyor...")
     sleep(1)
+    print(Fore.WHITE)
