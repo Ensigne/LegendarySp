@@ -1,4 +1,3 @@
-import os
 from time import sleep
 from pyfiglet import Figlet
 from colorama import Fore, Back, Style
@@ -8,6 +7,10 @@ import json
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import platform
+import os
+import qrcode
+
+os.system("clear")
 
 banner = 'LegendarySp Tools'
 custom_fig = Figlet(font='big')
@@ -28,49 +31,27 @@ print(Fore.WHITE)
 
 sleep(1)
 
-print("Seçenekler Yükleniyor...")
+# QRCode Bilgi
 
-sleep(1)
+urlmetin = " URL Adresi: "
 
-# Seçenekler
+urlbilgi = input(Fore.RED + urlmetin + Fore.WHITE) 
 
-secenek1metin = "1-) Yardımcı Toolar \n"
+# QRCode İşlem
 
-secenek2metin = "2-) Hack Tooları \n"
+leg = qrcode.QRCode(
+    version = 1,
+    error_correction = qrcode.constants.ERROR_CORRECT_L,
+    box_size = 100,
+    border = 4
+)
 
-secenek3metin = "3-) Çıkış İşlemi \n"
+leg.add_data(urlmetin)
+leg.make(fit=True)
 
-secenek1 = input(secenek1metin + secenek2metin + Fore.RED + secenek3metin + Fore.WHITE )
+# Resim Kayıt
 
+resim = leg.make_image(fill_color=(0,153,206),back_color="white")
+resim.save("Resimler/QRCode/LegQrCode.png")
 
-print(Fore.RED)
-
-
-# Koşullar
- 
-kosul1 = "1"
-kosul2 = "2"
-kosul3 = "3"
-
-
-# Seçenek İşlem
-
-# Hack Tooları
-
-if secenek1 == kosul1:
-    os.system("clear")
-    os.system("python tools/yardimci.py")
-
-if secenek1 == kosul2:
-    os.system("clear")
-    os.system("python security/hack.py")
-
-
-
-
-
-# Tool Çıkış
-if secenek1 == kosul3:
-    print("Çıkış Yapılıyor...")
-    sleep(1)
-    print(Fore.WHITE)
+print(Fore.GREEN + "QRCode" + Fore.YELLOW +  " Resimler\QRCode" + Fore.GREEN + " Yoluna Kayıt Edilmiştir!" + Fore.WHITE)

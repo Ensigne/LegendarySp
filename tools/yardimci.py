@@ -9,7 +9,9 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import platform
 
-banner = 'LegendarySp Tools'
+os.system("clear")
+
+banner = 'Developers Tools'
 custom_fig = Figlet(font='big')
 print(Fore.BLUE + custom_fig.renderText(banner))
 
@@ -34,13 +36,13 @@ sleep(1)
 
 # Seçenekler
 
-secenek1metin = "1-) Yardımcı Toolar \n"
+secenek1metin = "1-) QR Kod Oluşturucu \n"
 
-secenek2metin = "2-) Hack Tooları \n"
+secenek2metin = "2-) YouTube Video İndir \n"
 
 secenek3metin = "3-) Çıkış İşlemi \n"
 
-secenek1 = input(secenek1metin + secenek2metin + Fore.RED + secenek3metin + Fore.WHITE )
+secenek1 = input(secenek1metin + secenek2metin +Fore.RED + secenek3metin  + Fore.WHITE )
 
 
 print(Fore.RED)
@@ -52,20 +54,9 @@ kosul1 = "1"
 kosul2 = "2"
 kosul3 = "3"
 
-
-# Seçenek İşlem
-
-# Hack Tooları
-
 if secenek1 == kosul1:
     os.system("clear")
-    os.system("python tools/yardimci.py")
-
-if secenek1 == kosul2:
-    os.system("clear")
-    os.system("python security/hack.py")
-
-
+    os.system("python tools/qr_kod_olustur.py") 
 
 
 

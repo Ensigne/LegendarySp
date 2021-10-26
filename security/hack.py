@@ -9,7 +9,9 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import platform
 
-banner = 'LegendarySp Tools'
+os.system("clear")
+
+banner = 'Hack Tools'
 custom_fig = Figlet(font='big')
 print(Fore.BLUE + custom_fig.renderText(banner))
 
@@ -34,13 +36,11 @@ sleep(1)
 
 # Seçenekler
 
-secenek1metin = "1-) Yardımcı Toolar \n"
-
-secenek2metin = "2-) Hack Tooları \n"
+secenek1metin = "1-) E-Posta Spam \n"
 
 secenek3metin = "3-) Çıkış İşlemi \n"
 
-secenek1 = input(secenek1metin + secenek2metin + Fore.RED + secenek3metin + Fore.WHITE )
+secenek1 = input(secenek1metin + Fore.RED + secenek3metin + Fore.WHITE )
 
 
 print(Fore.RED)
@@ -59,11 +59,8 @@ kosul3 = "3"
 
 if secenek1 == kosul1:
     os.system("clear")
-    os.system("python tools/yardimci.py")
+    os.system("python hack/e_posta_spam.py")
 
-if secenek1 == kosul2:
-    os.system("clear")
-    os.system("python security/hack.py")
 
 
 
